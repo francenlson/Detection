@@ -6,7 +6,7 @@ classificadorFace = cv2.CascadeClassifier('cascades\haarcascade_frontalface_defa
 classificadorOlhos = cv2.CascadeClassifier('cascades\haarcascade_eye.xml')
 
 
-imagem = cv2.imread('pessoas\\faceolho.jpg')
+imagem = cv2.imread('pessoas\\beatles.jpg')
 
 imagemCinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
 
@@ -30,7 +30,7 @@ for (x, y, l, a) in facesDetectadas:
     # RETANGULO NOS OLHOS
     for (ox, oy, ol, oa) in olhosDetectados:
         cv2.rectangle(regiao, (ox, oy), (ox + ol, oy + oa), (0, 255, 0), 2)
-
+        
 
 cv2.imshow("Faces e Olhos Detectados", imagem)
 cv2.waitKey()
